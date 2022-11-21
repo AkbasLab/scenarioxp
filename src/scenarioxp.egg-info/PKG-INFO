@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: scenarioxp
+Version: 0.0.1
+Summary: A toolkit for targeted scenario selection.
+Home-page: 
+Author: Quentin Goss
+Author-email: gossq@my.erau.edu
+License: LICENSE
+Project-URL: Bug Tracker, 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >= 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Intro
+
+Work in progress.
