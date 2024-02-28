@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="scenarioxp",
-    version="0.0.1",
+    version="0.1.0",
     author="Quentin Goss",
     author_email="gossq@my.erau.edu",
     description="A toolkit for targeted scenario selection.",
@@ -28,7 +28,6 @@ setuptools.setup(
         "numpy >= 1.21.1",
         "scipy >= 1.7.1",
         "pandas >= 1.3.2",
-        "treelib >= 1.6.1",
-        "Rtree >= 1.0.0"
+        "sim_bug_tools >= 1.0.1"
     ],
 )
