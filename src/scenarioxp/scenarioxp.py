@@ -1,5 +1,6 @@
 import abc
 from typing import Callable
+import itertools
 
 import pandas as pd
 pd.set_option('mode.chained_assignment', None)
@@ -280,7 +281,7 @@ class Explorer(abc.ABC):
     @abc.abstractmethod
     def next_arr(self) -> np.ndarray:
         """
-        This gets the next va
+        This obtains the next arr.
         """
         raise NotImplementedError
 
@@ -335,7 +336,7 @@ class HistoryExplorer(Explorer):
         return
 
 
-import itertools
+
 
 class ExhaustiveExplorer(Explorer):
     
@@ -401,7 +402,7 @@ class SequenceExplorer(Explorer):
         fast_foward : int = 0
     ):
         """
-        The simplest explorer is the SequenceExplore, which samples the next
+        The simplest explorer is the SequenceExplorer, which samples the next
         parameter for a test using a quasi-random sequence.
 
         -- Params --

@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: scenarioxp
+Version: 0.1.0
+Summary: A toolkit for targeted scenario selection.
+Home-page: https://github.com/AkbasLab/scenarioxp
+Author: Quentin Goss
+Author-email: gossq@my.erau.edu
+License: LICENSE
+Project-URL: Bug Tracker, https://github.com/AkbasLab/scenarioxp/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >= 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.1
+Requires-Dist: scipy>=1.7.1
+Requires-Dist: pandas>=1.3.2
+Requires-Dist: sim_bug_tools>=1.0.1
+
+# scenarioxp
+
+`scenarioxp` is a toolkit which implements various strategies for sampling concrete parameters from logical scenarios with parameter ranges which is scalable to any number of dimensions. This module extends our other toolkit `sim_bug_tools`, exploiting it's utility in a way that is intuitive and effective while conforming to common datascience data structures of Python.
+
+This module is developed for research in scenario-based testing for the validation and verification (V&V) of autonomous vehicles (AV). We were frustrated by the limitations imposed by time and resource cost of the AV V&V testing process given the many configurations of parameters for AV Testing. This module contains the tools we use to understand and navigate these high-dimensional spaces.
+
+## Authors
+This module is produced as a product of PhD dissertation research by the authors at Embry-Riddle Aeronautical University of Daytona Beach, Florida. Dept. of Electrical Engineering and Computer Science.
+
+**PhD Advisor**<br/>
+Dr. Mustafa Ilhan Akbas `akbasm@erau.edu`
+
+**PhD Student**<br/>
+Quentin Goss `gossq@my.erau.edu`
+
+## Citing This Work
+If you would like to cite this work. Pleace cite our latest paper about the topic.
+
+Q. Goss, W. C. Pate, and M. I. Akbas ̧, “An Integrated Scenario-Based Testing and Explanation Framework for Autonomous Vehicles,” accepted to *2024 IEEE International Conference on Mobility, Operations, Services and Technologies (MOST)*, IEEE.

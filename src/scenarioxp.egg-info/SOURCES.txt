@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/scenarioxp/__init__.py
+src/scenarioxp/scenarioxp.py
+src/scenarioxp.egg-info/PKG-INFO
+src/scenarioxp.egg-info/SOURCES.txt
+src/scenarioxp.egg-info/dependency_links.txt
+src/scenarioxp.egg-info/requires.txt
+src/scenarioxp.egg-info/top_level.txt
