@@ -201,6 +201,7 @@ class Scenario(abc.ABC):
         """
         assert isinstance(params, pd.Series)
         self._params = params
+        self._score = pd.Series({"default" : 0})
         return
 
     @property
@@ -210,12 +211,12 @@ class Scenario(abc.ABC):
         """
         return self._params
 
-    @abc.abstractproperty
+    @property
     def score(self) -> pd.Series:
         """
         Scenario score.
         """
-        raise NotImplementedError
+        return self._score
 
 
 
@@ -481,7 +482,7 @@ class FindSurfaceExplorer(Explorer):
         
         # Find the surface
         rng = np.random.RandomState(seed=seed)
-        self._v = rng.rand(len(root))
+        self._v = rng.uniform(-1,1, size=root.shape)
         self._s = self._v * self._d / np.linalg.norm(self._v)
         self._interm = [root]
 
