@@ -12,7 +12,8 @@ class BlankScenario(sxp.Scenario):
         self._score = pd.Series({"color" : 0})
         return
     
-def main():
+
+def plot_2d():
     params_df = pd.read_csv("params.csv")
 
     manager = sxp.ScenarioManager(params_df)
@@ -90,9 +91,19 @@ def main():
     ax2.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
     ax3.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
 
+    # Use LaTeX for text rendering
+    plt.rc('text', usetex=True)
+    plt.rc('font', family='serif')
+    # ax2.set_xlabel("$P_1$")
+    ax1.set_ylabel("$P_2$")
+    fig.suptitle("$P_1$",x=.56, y=0.00)
+
     fig.tight_layout()
     plt.savefig("sequential.pdf",bbox_inches="tight")
+    return
 
+def main():
+    plot_2d()
     return
 
 if __name__ == "__main__":

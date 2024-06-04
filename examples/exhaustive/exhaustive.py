@@ -25,7 +25,7 @@ def main():
     ax = plt.gca()
 
     # Add vertical lines every 0.05
-    for xc in np.arange(0, 1.05, 0.05):
+    for xc in np.arange(0.025, 1.05, 0.05):
         ax.axvline(x=xc, color='grey', linestyle='-', linewidth=0.5, zorder=1)
         ax.axhline(y=xc, color='grey', linestyle='-', linewidth=0.5, zorder=1)
 
@@ -34,9 +34,14 @@ def main():
 
     ax.set_xlim([0,1])
     ax.set_ylim([0,0.5])
+    ax.set_yticks([0,.1,.2,.3,.4,.5])
     ax.set_aspect('equal')
 
-    
+    # Use LaTeX for text rendering
+    plt.rc('text', usetex=True)
+    plt.rc('font', family='serif')
+    ax.set_xlabel("$P_1$")
+    ax.set_ylabel("$P_2$")
 
 
     fig.tight_layout()

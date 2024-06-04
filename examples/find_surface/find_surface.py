@@ -35,7 +35,7 @@ def plot(history : list[sxp.FindSurfaceExplorer]):
     #
 
 
-    fig = plt.figure(figsize = (5,5))
+    fig = plt.figure(figsize = (5,2))
     ax = fig.gca()
 
 
@@ -43,11 +43,22 @@ def plot(history : list[sxp.FindSurfaceExplorer]):
     for exp in history:
         x = exp.params_history["x"]
         y = exp.params_history["y"]
-        
-        ax.plot(x,y, color="black")
+        colors = ["red","black"]
+        color = [colors[i] for i in exp.score_history["inside"]]
+        # print(color)
+        ax.scatter(
+            x,y, 
+            color="black",
+            marker = ".",
+            # facecolors="none",
+            alpha = 1,
+            zorder = 2
+        )
+        # ax.plot(x,y, 
+        #         color="black", 
+        #         linewidth = 2.5,
+        #         )
         continue
-
-    
     
     """
     Plot the circle
@@ -73,7 +84,7 @@ def plot(history : list[sxp.FindSurfaceExplorer]):
         x, y, 
         hatch='\\\\',
         edgecolor="gray", 
-        facecolor="none",
+        facecolor="white",
         alpha = 0.4,
         zorder = 1
     )
@@ -91,8 +102,14 @@ def plot(history : list[sxp.FindSurfaceExplorer]):
     # Equal Aspect
     ax.set_aspect('equal')
 
+    # Use LaTeX for text rendering
+    plt.rc('text', usetex=True)
+    plt.rc('font', family='serif')
+    ax.set_xlabel("$P_1$")
+    ax.set_ylabel("$P_2$")
+
     plt.tight_layout()
-    plt.savefig("find-surface.png",bbox_inches="tight")
+    plt.savefig("find-surface.pdf",bbox_inches="tight")
     return
 
 def generate_data() -> list[sxp.FindSurfaceExplorer]:

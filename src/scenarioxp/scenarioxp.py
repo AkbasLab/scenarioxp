@@ -594,17 +594,18 @@ class BoundaryRRTExplorer(Explorer):
     scenario_manager : ScenarioManager,
     scenario : Callable[[pd.Series], Scenario],
     target_score_classifier : Callable[[pd.Series], bool],
-    strategy : str = "constant",
+    strategy : str = "e",
     delta_theta : float = 15 * np.pi / 180,
     theta0 : float = 90 * np.pi / 180,
     N : int = 4,
+    scale : float =  2
     ): 
         super().__init__(scenario_manager, scenario, target_score_classifier)
         
         # Adherence Factory
         classifier = self._brrt_classifier
         domain = sbt.Domain.normalized(root.shape[0])
-        scaler = scenario_manager.params["inc_norm"].to_numpy() * 2
+        scaler = scenario_manager.params["inc_norm"].to_numpy() * scale
 
         strategy = strategy.lower()
         assert strategy in \
